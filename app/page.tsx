@@ -1,6 +1,9 @@
 import { createClient } from "@/utils/supabase/server";
 import LoginButton from "@/components/login-button";
 import VoteButtons from "@/components/vote-buttons";
+import CaptionGenerator from "@/components/caption-generator";
+
+
 
 type CaptionRow = {
     id: string;
@@ -106,6 +109,7 @@ export default async function Home() {
                     {rows.length}{" "}
                     {rows.length === 1 ? "caption" : "captions"} from Supabase
                 </p>
+                <CaptionGenerator />
 
                 {rows.length === 0 ? (
                     <p className="mt-8 rounded-xl border border-dashed border-zinc-300 bg-white px-6 py-16 text-center text-zinc-500 shadow-sm">
